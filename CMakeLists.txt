@@ -1,5 +1,17 @@
-cmake_minimum_required(VERSION 3.8.2)
-project(myWxApplication VERSION 1.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
-add_subdirectory(Libraries)
-add_subdirectory(App)
+# Set the project name
+PROJECT(myWxApplication VERSION 1.0)
+
+ SET(MAIN_SOURCE_DIR ${PROJECT_SOURCE_DIR})
+ SET(MAIN_BINARY_DIR ${PROJECT_BINARY_DIR})
+
+# Add single dirs to inclusion path
+ INCLUDE_DIRECTORIES(BEFORE ".")
+ INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR})
+ INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR}/Libraries)
+ INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR}/App)
+    
+ SUBDIRS(Libraries)
+ SUBDIRS(App) 
+ 
