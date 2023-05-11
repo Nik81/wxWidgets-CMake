@@ -15,3 +15,5 @@ PROJECT(myWxApplication VERSION 1.0)
  SUBDIRS(Libraries)
  SUBDIRS(App) 
  
+ 
+ CONFIGURE_FILE(Defines.h.in Defines.h)
